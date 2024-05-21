@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            width: 100%;
+    height: 100vh;
+    background-image: url(house.jpg);
+
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            
+        }
+
+        .filters {
+            margin-top: 120px;
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: burlywood;
+        }
+
+        .filter {
+            width: 100%;
+          
+        }
+
+        .filter label {
+            display: block;
+            margin-bottom: 5px;
+            background-color: burlywood;
+        }
+
+        .filter select, .filter input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: burlywood;
+            color: black;
+        }
+
+        .filter .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            background-color: burlywood;
+            
+        }
+
+        .content {
+            width: 75%;
+            
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            
+        }
+
+        #search-bar {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            background-color: burlywood;
+        }
+
+        #search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: antiquewhite;
+            color:black;
+        }
+
+        .header-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            text-decoration:none
+        }
+
+        .header-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color:white ;
+        }
+
+        .listings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            
+        }
+
+        .listing {
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: burlywood;
+        }
+
+        .listing img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .details h2 {
+            margin: 0 0 10px 0;
+        }
+
+        .details p {
+            margin: 5px 0;
+        }
+
+        .details button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color:bisque;
+            color:black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            
+        }
+
+        .pagination button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 5px;
+            background-color: burlywood;
+        }
+
+        .search-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background-color: burlywood;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="filters">
+            <div class="filter">
+                <label for="city">المدينة</label>
+                <select id="city">
+                    <option value="">ابحث عن المدينة...</option>
+                    <!-- Add options as needed -->
+                </select>
+            </div>
+            <div class="filter">
+                <label for="region">المنطقة</label>
+                <select id="region">
+                    <option value="">ابحث عن المنطقة...</option>
+                    <!-- Add options as needed -->
+                </select>
+            </div>
+            <div class="filter">
+                <label for="purpose">مخصصة ل</label>
+                <select id="purpose">
+                    <option value="">ابحث</option>
+                    <option value="residential">سكنية</option>
+                    <option value="commercial">تجارية</option>
+                    <option value="agricultural">زراعية</option>
+                    <option value="mixed">الاستخدام المتعدد</option>
+                    <option value="industrial">صناعية</option>
+                </select>
+            </div>
+            <div class="filter checkbox-group">
+                <label>مخصصة ل</label>
+                <div>
+                    <input type="checkbox" id="all" name="purpose" value="all">
+                    <label for="all">الكل</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="residential" name="purpose" value="residential">
+                    <label for="residential">سكنية</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="commercial" name="purpose" value="commercial">
+                    <label for="commercial">تجارية</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="agricultural" name="purpose" value="agricultural">
+                    <label for="agricultural">زراعية</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="mixed" name="purpose" value="mixed">
+                    <label for="mixed">الاستخدام المتعدد</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="industrial" name="purpose" value="industrial">
+                    <label for="industrial">صناعية</label>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <header>
+                <div class="header-buttons">
+                    <a href="index5.html"class="header-buttons" >
+                       <button >login</button>
+                    </a>
+                    <a href="index2.html"class="header-buttons" >
+                        <button>تفاصيل الاعلان</button>
+                     </a>
+                     <a href="index3.html"class="header-buttons" >
+                       <button>تعديل بيانات المستخدم</button>
+                     </a>
+                     <a href="index6.html"class="header-buttons" >
+                       <button>عقار غير موجود</button>
+                     </a>
+                     <a href="index4.html"class="header-buttons" >
+                        <button>اعلن عن عقارك</button>
+                     </a>
+                    
+                    
+                 
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="ابحث" id="search-bar">
+                    <button id="search-button">بحث</button>
+                </div>
+            </header>
+            <div class="listings">
+                <div class="listing">
+                    <img src="image3.webp" alt="Property Image">
+                    <div class="details">
+                        <h2>أرض مميزة للبيع في مدينة جنين</h2>
+                        <p>سكنية، 700 متر²، المالك</p>
+                        <p>أراضي للبيع في جنين</p>
+                        <button>05975869XX</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <img src="image-j.webp" alt="Property Image">
+                    <div class="details">
+                        <h2>أرض مميزة للبيع في مدينة جنين</h2>
+                        <p>سكنية، 600 متر²، المالك</p>
+                        <p>أراضي للبيع في جنين</p>
+                        <button>05975869XX</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <img src="image4.jpeg" alt="Property Image">
+                    <div class="details">
+                        <h2>أرض مميزة للبيع في مدينة بيرزيت</h2>
+                        <p>سكنية، 800 متر²، المالك</p>
+                        <p>أراضي للبيع في بيرزيت</p>
+                        <button>05975869XX</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <img src="house-n.webp" alt="Property Image">
+                    <div class="details">
+                        <h2>منزل للبيع في رفيديا</h2>
+                        <p>سكنية، 130 متر²، المالك</p>
+                        <p>منزل للبيع في رفيديا</p>
+                        <button>05975869XX</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <img src="house-n2.png" alt="Property Image">
+                    <div class="details">
+                        <h2>شقة للبيع في منطقة الاكادمية</h2>
+                        <p>سكنية، 165 متر²، المالك</p>
+                        <p>شقة للبيع في منطقة الاكادمية</p>
+                        <button>05975869XX</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <img src="image-n3.png" alt="Property Image">
+                    <div class="details">
+                        <h2>شقة مميزة للبيع سوبر ديلوكس بالمصايف</h2>
+                        <p>سكنية، 190 متر²، المالك</p>
+                        <p>شقة مميزة للبيع </p>
+                        <button>05975869XX</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <img src="house-t.png" alt="Property Image">
+                    <div class="details">
+                        <h2>شقة للبيع طولكرم</h2>
+                        <p>سكنية، 200 متر²، الوسيط</p>
+                        <p>شقة للبيع</p>
+                        
+                        <button>9725697644XX</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('search-button').addEventListener('click', function() {
+            let searchBarValue = document.getElementById('search-bar').value;
+            alert('بحث عن: ' + searchBarValue);
+        });
+    </script>
+</body>
+</html>

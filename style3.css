@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    background-color: #f0f0f0;
+    background-image: url(house.jpg);
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: burlywood;
+}
+
+h1 {
+    text-align: center;
+    color: #4b6242;
+}
+
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.upload {
+    width: 30%;
+    text-align: center;
+    
+}
+
+.upload img {
+    width: 80%;
+    border-radius: 50%;
+    border: 2px solid #4b6242;
+}
+
+.upload input[type="file"] {
+    display: block;
+    margin: 20px auto;
+    background-color: burlywood;
+    
+    
+}
+
+.details {
+    width: 65%;
+    
+}
+
+.details ul {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.details ul li {
+    margin: 10px 0;
+    
+    
+}
+
+.details ul li a {
+    color: #d9534f;
+    text-decoration: none;
+    
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+    
+    
+    
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #52a034;
+    
+}
+
+.buttons .back {
+    background-color: bisque;
+    color: black;
+}
+
+.buttons .save {
+    color: black;
+    background-color:#52a034;
+}

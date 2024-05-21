@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتابة مواصفات عقار الاحلام</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            direction: rtl;
+            width: 100%;
+            height: 100vh;
+            background-image:url(house.jpg) ;
+            
+        }
+        .container {
+            max-width: 800px;
+            margin: 0px auto;
+            padding: 20px;
+            background-color:burlywood;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            flex: 1;
+            margin-left: 10px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            flex: 2;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+    background-color: bisque;
+
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .optional {
+            color: #888;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .checkbox-group label {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .checkbox-group input {
+            margin-left: 10px;
+        }
+        .form-group .file-input {
+            flex: 2;
+            padding: 10px;
+        }
+        .submit-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .submit-group input[type="checkbox"] {
+            margin-left: 10px;
+        }
+        .submit-group button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>هل تريد الحصول على عقار في المستقبل</h1>
+        <h4>سيتم التواصل معك في حال توفر عقار مشابه للمواصفات </h4><br><br>        <div class="form-group">
+            <label for="fullName">الاسم الكامل</label>
+            <input type="text" id="fullName" placeholder="يرجى إدخال الاسم واسم العائلة.">
+        </div>
+        <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" placeholder="يرجى إدخال البريد الإلكتروني بشكل صحيح لتسلم رسالة التفصيل.">
+        </div>
+        <div class="form-group">
+            <label for="city">المدينة</label>
+            <select id="city">
+                <option value="">اختر المدينة</option>
+                <option value="city1">نابلس</option>
+                <option value="city2">القدس</option>
+                <option value="city2">طولكرم</option>
+                <option value="city2">جنين</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phone">الهاتف</label>
+            <input type="text" id="phone" placeholder="يفضل إدخال رقم هاتف محمول وبدون المقدمة الدولية.">
+        </div>
+        <div class="form-group">
+            <label for="whatsapp">واتس آب <span class="optional">(اختياري)</span></label>
+            <input type="text" id="whatsapp">
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="form-group">
+            <label for="offer">العرض</label>
+            <select id="offer">
+                <option value="sale">للبيع</option>
+                <option value="rent">للإيجار</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="type">نوع العقار</label>
+            <select id="type">
+                <option value="">اختر</option>
+                <option value="house">منزل</option>
+                <option value="apartment">شقة</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="area">المساحة</label>
+            <input type="text" id="area" placeholder="متر مربع">
+        </div>
+        <div class="form-group">
+            <label for="unit">وحدة القياس</label>
+            <select id="unit">
+                <option value="sqm">متر مربع</option>
+                <option value="sqft">قدم مربع</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="price">السعر</label>
+            <input type="text" id="price" placeholder="دولار">
+        </div>
+        <div class="form-group">
+            <label for="currency">العملة</label>
+            <select id="currency">
+                <option value="usd">دولار</option>
+                <option value="eur">يورو</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="region">المنطقة</label>
+            <select id="region">
+                <option value="">اختر المنطقة</option>
+                <option value="region1">المنطقة الاولى</option>
+                <option value="region2">المنطقة الثانية</option>
+                
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="subRegion">تصنيف المنطقة <span class="optional">(اختياري)</span></label>
+            <select id="subRegion">
+                <option value="">اختر</option>
+                <option value="subRegion1">A</option>
+                <option value="subRegion2">B</option>
+                <option value="subRegion2">C</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address">العنوان</label>
+            <input type="text" id="address" placeholder="اسم الشارع أو البلدة">
+        </div>
+        <div class="form-group">
+            <label for="details">مزيد من التفاصيل <span class="optional">(اختياري)</span></label>
+            <textarea id="details" rows="4"></textarea>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>الصور والخدمات والمميزات</h2>
+        <div class="form-group">
+            <label for="images">الصور</label>
+            <input type="file" id="images" class="file-input" multiple>
+        </div>
+        <a href="index.html"class="back" >
+            <button >رجوع</button>
+         </a>
+        </div>
+        <div class="submit-group">
+            <label>
+                <input type="checkbox" required> قرأت و أوافق على سياسة الخصوصية و شروط الاستخدام.
+            </label>
+            <button type="submit">إرسال</button>
+        </div>
+    </div>
+
+    <script>
+       
+    </script>
+</body>
+</html>
